@@ -1,0 +1,290 @@
+/* ------------------ GLOBAL ------------------ */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #1E3A8A;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------------------ NAVIGATION ------------------ */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #6d7785;
+  color: white;
+  flex-wrap: nowrap; /* keep horizontal on mobile */
+}
+
+nav .logo img#logo-img {
+  height: 50px;
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li a {
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color: #e0f2f1;
+}
+
+/* ------------------ HERO ------------------ */
+.hero {
+  background: linear-gradient(135deg, rgba(30,58,138,0.7), rgba(5,150,105,0.7)), url('background.png') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #fff;
+  color: #059669;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.hero .btn:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+/* ------------------ FEATURED PRODUCTS ------------------ */
+.featured-products {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.product-card {
+  background: #e7ebee;
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+  width: 150px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0px 6px 12px rgba(0,0,0,0.25));
+}
+
+.product-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ------------------ ABOUT ------------------ */
+.about {
+  text-align: center;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.owner-image img {
+  max-width: 200px;   /* desktop default */
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 30px auto;
+}
+
+.about-text {
+  text-align: left;
+}
+
+.about-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.about-text blockquote {
+  font-style: italic;
+  margin: 20px 0;
+  border-left: 4px solid #555;
+  padding-left: 15px;
+  color: #333;
+}
+
+/* ------------------ GRADIENT BACKGROUND FOR MAIN CONTENT ------------------ */
+/* Apply to all sections except hero and contact */
+section:not(.hero):not(.contact) {
+  background: linear-gradient(135deg, #90b3e7, #f0f0f5); /* adjust colors as desired */
+  padding: 60px 20px; /* override smaller padding if needed */
+  transition: background 0.3s ease;
+}
+
+/* Optional: keep featured-products and about padding responsive */
+@media screen and (max-width: 768px) {
+  section:not(.hero):not(.contact) {
+    padding: 40px 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section:not(.hero):not(.contact) {
+    padding: 30px 10px;
+  }
+}
+
+
+
+
+/* ---------------- MOBILE & TABLET RESPONSIVE ---------------- */
+@media screen and (max-width: 768px) {
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .owner-image img {
+    max-width: 150px; /* smaller on tablets/mobiles */
+    margin-bottom: 20px;
+  }
+
+  .about {
+    padding: 30px 15px;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about h2 {
+    font-size: 1.7rem;
+  }
+
+  .owner-image img {
+    max-width: 120px; /* smaller on phones */
+    margin-bottom: 15px;
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+  }
+
+  .about-text ul {
+    padding-left: 15px;
+  }
+}
+
+
+/* ------------------ CONTACT ------------------ */
+.contact {
+  padding: 50px 20px;
+  background: #e6fffa;
+  text-align: center;
+}
+
+.socials img {
+  width: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.socials img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+}
+
+#whatsapp-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#whatsapp-form input,
+#whatsapp-form textarea {
+  width: 300px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#whatsapp-form button {
+  padding: 12px 25px;
+  background: #059669;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ------------------ MOBILE RESPONSIVE ------------------ */
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 60vh;
+    padding: 0 10px;
+  }
+
+  .product-card {
+    width: 45%;
+  }
+
+  #whatsapp-form input,
+  #whatsapp-form textarea {
+    width: 90%;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .product-card {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
